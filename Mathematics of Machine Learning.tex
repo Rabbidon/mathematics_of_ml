@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\chapternumber}{1}
+\title{Mathematics of Machine Learning - Questions and Solutions}
+\author{Edwin Fennell}
+\date{}
+\newenvironment{QandA}{\begin{enumerate}[label=\chapternumber.\arabic*]\bfseries\boldmath}
+	{\end{enumerate}}
+\newenvironment{answered}{\par\bigskip\normalfont\unboldmath}{}
+\usepackage{lipsum}
+\pagestyle{empty}
+	\maketitle
+	
+	\noindent%
+	\begin{QandA}
+		\item Prove that
+		\[p(x,y|z) = p(x|z)p(y|x,z)\]
+		and also that
+		\[p(x|y,z) = \frac{p(y|x,z)p(x|z)}{p(y|z)}\]
+		\begin{answered}
+			Let's start with the first equality
+			On the right-hand side we have a product of two separate terms. By applying Bayes' rule once to each term we get
+			\[p(x|z)p(y|x,z) = p(x,z)p(z)*\frac{p((y|x)|z)}{p(z)}=p(x,z)p((y|x)|z)\]
+			Now if we apply Bayes' rule to the left-hand side we get
+			\[p(x,y|z) = p(x|(y|z))p(y|z) = \]
+			and another application gives us
+			\[p(x|(y|z))p(y|z)p\]
+		\end{answered}
+	\end{QandA}
+\end{document}
