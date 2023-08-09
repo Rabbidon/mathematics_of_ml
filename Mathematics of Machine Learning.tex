@@ -65,8 +65,42 @@
 				\[\forall a\in\mathbb{Z}, \bar{a} \oplus \bar{0} = \overline{(a + 0)} = \bar{a}\]
 				\item Inverses - the inverse of $\bar{a}$ for any $a\in\mathbb{Z}$ is $\overline{-a}$:
 				\[\forall a\in\mathbb{Z}, \bar{a} \oplus \overline{-a} = \overline{(a-a)} = \bar{0}\]
-				\item Associativity - for any $a,b,c\in\mathbb{Z}$ we have
+				\item Associativity - we have
+				\[\forall a,b,c\in \mathbb{Z}, (\bar{a} \oplus \overline{b})\oplus \overline{c} = \overline{(a+b)}\oplus \overline{c} = \overline{a+b+c}\]
+				and also
+				\[\forall a,b,c\in \mathbb{Z}, \bar{a} \oplus (\overline{b}\oplus \overline{c}) = \overline{a} \oplus \overline{(b+c)} = \overline{a+b+c}\]
+				and so we have associativity. Assuming that the operator $\oplus$ is well-defined, this more or less comes down to "addition is associative".
 			\end{itemize}
+			Therefore $(\mathbb{Z}_n,\oplus)$ is indeed a group.
+			
+			b. I'm not going to write out the multiplication table for $\mathbb{Z}_5\backslash\{\overline{0}\}$. I will show that this is a group when I prove the general case in part d of this question. Assuming that it is a group, it is clearly Abelian from the symmetric nature of $\otimes$.
+			
+			c. Again, I'll use the result from part d. 8 is composite so this is not a group.
+			
+			d. Suppose that $n$ is composite. Then $\exists$ $a$,$b$ s.t. $1<a,b<n$ and $a\cdot b=n$. Therefore we have 
+			\[\overline{a}\otimes\overline{b}=\overline{n}=\overline{0}\]
+			Therefore $\mathbb{Z}_n\backslash\{\overline{0}\}$ is not a group since it fails the requirement of closure.
+			
+			Now, if $n$ is instead prime, then $\mathbb{Z}_n\backslash\{\overline{0}\}$ is a group - we will show this by verifying the group axioms.
+			\begin{itemize}
+				\item Closure - suppose that $a,b\in\mathbb{Z}\backslash\{\overline{0}\}$. Now, suppose that
+				\[ab\equiv 0 \mod{n}\]
+				Then $ab=kn$ for some $k\in \mathbb{Z}$. Since $n$ is prime, $a$ and $n$ are coprime, and therefore by Bezout's theorem, $\exists u,v\in\mathbb{Z}$ s.t.
+				\[ua+vn=1\]
+				Therefore
+				\[b = b\cdot 1 = b(ua+vn) = ab\cdot u + bvn = (uk+bv)n\]
+				and so we find that $b$ is a multiple of $n$. This is a contradiction since $b\in\mathbb{Z}\backslash\{\overline{0}\}$. Therefore $ab\not\equiv 0 \mod{n}$ and we have 
+				\[\overline{a},\overline{b}\neq\overline{0}\implies\overline{ab}\neq\overline{0}\]
+				and so we have closure
+				\item Identity - the identity is trivially $\overline{1}$
+				\item Inverse - for any $\overline{a}\neq\overline{0}$ we have that $a$ and $n$ are coprime. By Bezout's theorem we know that $\exists u,v\in\mathbb{Z}$ s.t.
+				\[ua+vn=1\]
+				Therefore
+				\[\overline{a}\otimes\overline{u}=\overline{au}=\overline{(1-vn)}=\overline{1}\]
+				and so we have constructed an inverse for $\overline{a}$
+				\item Associativity - exactly the same proof as in part a. Essentially "multiplication is associative".
+			\end{itemize}
+			Therefore $(\mathbb{Z}_n,\otimes)$ is indeed a group.
 		\end{answered}
 	\end{QandA}
 \end{document}
