@@ -102,5 +102,141 @@
 			\end{itemize}
 			Therefore $(\mathbb{Z}_n,\otimes)$ is indeed a group.
 		\end{answered}
+		
+		\item
+		\begin{answered}
+			Let's check the four group requirements:
+			\begin{itemize}
+				\item Closure - $\forall x_1,y_1,z_1,x_2,y_2,z_2\in\mathbb{R}$ we have
+				\[
+				\begin{pmatrix}
+					1 & x_1 & z_1 \\ 0 & 1 & y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & x_2 & z_2 \\ 0 & 1 & y_2 \\ 0 & 0 & 1
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					1 & x_1+x_2 & x_1y_2+z_1+z_2 \\ 0 & 1 & y_1+y_2 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\]
+				so we have closure
+				\item Identity - from the above calculation (or simply by knowing what the identity matrix is) we see that 
+				\[
+				\begin{pmatrix}
+					1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\in
+				\mathcal{G}\]
+				and acts as the identity.
+				\item Inverses - we see that $\forall x,y,z\in\mathbb{R}$ we have
+				\[
+				\begin{pmatrix}
+					1 & x_1 & z_1 \\ 0 & 1 & y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & -x_1 & x_1y_1-z_1 \\ 0 & 1 & -y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				=
+				\begin{pmatrix}
+					1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\]
+				\item Associativity - we can just show this manually. Let
+				\[x_1,y_1,z_1,x_2,y_2,z_2,x_3,y_3,z_3\in\mathbb{R}\]
+				Then 
+				\[
+				\left(
+				\begin{pmatrix}
+					1 & x_1 & z_1 \\ 0 & 1 & y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & x_2 & z_2 \\ 0 & 1 & y_2 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\right)
+				\cdot
+				\begin{pmatrix}
+					1 & x_3 & z_3 \\ 0 & 1 & y_3 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\]
+				\[=\begin{pmatrix}
+					1 & x_1+x_2 & x_1y_2+z_1+z_2 \\ 0 & 1 & y_1+y_2 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & x_3 & z_3 \\ 0 & 1 & y_3 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\]
+				\[=
+				\begin{pmatrix}
+					1 & x_1+x_2+x_3 & x_1y_2 + x_1y_3 + x_2y_3 + z_1+z_2+z_3 \\ 0 & 1 & y_1+y_2+y_3 \\ 0 & 0 & 1
+				\end{pmatrix}\]
+				and
+				\[
+				\begin{pmatrix}
+					1 & x_1 & z_1 \\ 0 & 1 & y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\left(
+				\begin{pmatrix}
+					1 & x_2 & z_2 \\ 0 & 1 & y_2 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & x_3 & z_3 \\ 0 & 1 & y_3 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\right)
+				\]
+				\[=				\begin{pmatrix}
+					1 & x_1 & z_1 \\ 0 & 1 & y_1 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\cdot
+				\begin{pmatrix}
+					1 & x_2 + x_3 & x_2y_3 + z_2 + z_3 \\ 0 & 1 & y_2 + y_3 \\ 0 & 0 & 1
+				\end{pmatrix}
+				\]
+				\[=
+				\begin{pmatrix}
+					1 & x_1+x_2+x_3 & x_1y_2 + x_1y_3 + x_2y_3 + z_1+z_2+z_3 \\ 0 & 1 & y_1+y_2+y_3 \\ 0 & 0 & 1
+				\end{pmatrix}\]
+				and so we have associativity.
+			\end{itemize}
+			Therefore $(\mathcal{G},\cdot)$ is a group. It is not Abelian though. We can see this from observing that
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+			\end{pmatrix}
+			\cdot
+			\begin{pmatrix}
+				1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				1 & 2 & 2 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+			\end{pmatrix}
+			\]
+			and
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+			\end{pmatrix}
+			\cdot
+			\begin{pmatrix}
+				1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				1 & 2 & 3 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+			\end{pmatrix}
+			\]
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			The first product is not computable since the column count of the first matrix is not equal to the row count of the second. All the other products are valid. I will not compute them here.
+		\end{answered}
 	\end{QandA}
 \end{document}
