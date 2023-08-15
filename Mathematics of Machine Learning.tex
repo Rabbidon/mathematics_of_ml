@@ -238,5 +238,390 @@
 		\begin{answered}
 			The first product is not computable since the column count of the first matrix is not equal to the row count of the second. All the other products are valid. I will not compute them here.
 		\end{answered}
+		
+		\item
+		\begin{answered}
+			We could just ask a linear equation solver to do this for us, but I think that the point of this question is to understand the solving process. In each case we use row operations to put the "query matrix" into echelon row form. Note that we can combine the ability to multiply rows by non-zero constants and adding a row to another row to simply add a non-zero multiple of a row to a different row.\\
+			\\
+			a. We need to solve
+			\[\begin{pmatrix}
+				1 & 1 & -1 & -1\\
+				2 & 5 & -7 & -5\\
+				2 & -1 & 1 & 3\\
+				5 & 2 & -4 & 2
+			\end{pmatrix}\textbf{x}
+			=
+			\begin{pmatrix}
+				1\\
+				-2\\
+				4\\
+				6
+			\end{pmatrix}\]
+			We add multiples of row 1 to all other rows in order to force as many zeros as possible in the first column. giving
+				\[\begin{pmatrix}
+				1 & 1 & -1 & -1\\
+				0 & 3 & -5 & -3\\
+				0 & -3 & 3 & 5\\
+				0 & -3 & 1 & 7
+			\end{pmatrix}\textbf{x}
+			=
+			\begin{pmatrix}
+				1\\
+				-4\\
+				2\\
+				1
+			\end{pmatrix}\]
+			We repeat for row 2 and the second column:
+			\[\begin{pmatrix}
+				1 & 1 & -1 & -1\\
+				0 & 3 & -5 & -3\\
+				0 & 0 & -2 & 2\\
+				0 & 0 & -4 & 4
+			\end{pmatrix}\textbf{x}
+			=
+			\begin{pmatrix}
+				1\\
+				-4\\
+				-2\\
+				-3
+			\end{pmatrix}\]
+			and then row 3 and the third column:
+			\[\begin{pmatrix}
+				1 & 1 & -1 & -1\\
+				0 & 3 & -5 & -3\\
+				0 & 0 & -2 & 2\\
+				0 & 0 & 0 & 0
+			\end{pmatrix}\textbf{x}
+			=
+			\begin{pmatrix}
+				1\\
+				-4\\
+				-2\\
+				1
+			\end{pmatrix}\]
+			Understandably, $0=1$ has no solutions, so there are no solutions to this equation.
+			
+			b. We need to solve
+			\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				1 & 1 & 0 & -3 & 0 \\
+				2 & -1 & 0 & 1 & -1 \\
+				-1 & 2 & 0 & -2 & -1
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				6\\
+				5\\
+				1
+			\end{pmatrix}
+			\]
+			Again we do the whole "row reduction" thing. We add multiples of the first row the other rows in order to make a bunch of zeroes in the first column:
+			\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				0 & 2 & 0 & -3 & -1 \\
+				0 & 1 & 0 & 1 & -3 \\
+				0 & 1 & 0 & -2 & 0
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				3\\
+				-1\\
+				4
+			\end{pmatrix}
+			\]
+			Then we swap the second and third rows:
+			\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				0 & 1 & 0 & 1 & -3 \\
+				0 & 2 & 0 & -3 & -1 \\
+				0 & 1 & 0 & -2 & 0
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				-1\\
+				3\\
+				4
+			\end{pmatrix}
+			\]
+			Then we use the second row to introduce zeros into the second column:
+			\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				0 & 1 & 0 & 1 & -3 \\
+				0 & 0 & 0 & -5 & 5 \\
+				0 & 0 & 0 & -3 & 3
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				-1\\
+				5\\
+				5
+			\end{pmatrix}
+			\]
+			Multiply the third row by 3 and the last row by 5:
+			\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				0 & 1 & 0 & 1 & -3 \\
+				0 & 0 & 0 & -15 & 15 \\
+				0 & 0 & 0 & -15 & 15
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				-1\\
+				15\\
+				25
+			\end{pmatrix}
+			\]
+			and then subtract the third row from the 4th to give
+						\[\begin{pmatrix}
+				1 & -1 & 0 & 0 & 1 \\
+				0 & 1 & 0 & 1 & -3 \\
+				0 & 0 & 0 & -15 & 15 \\
+				0 & 0 & 0 & 0 & 0
+			\end{pmatrix}
+			\textbf{x}=
+			\begin{pmatrix}
+				3\\
+				-1\\
+				15\\
+				10
+			\end{pmatrix}
+			\]
+			Therefore any solution to this equation would require $10=0$, and thus there are no solutions.
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			We need to solve 
+			\[\begin{pmatrix}
+				0 & 1 & 0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 & 1 & 0 \\
+				0 & 1 & 0 & 0 & 0 & 1 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				2\\
+				-1\\
+				1
+			\end{pmatrix}
+			\]
+			We can pretty straightforwardly subtract the first row from the third, giving
+			\[\begin{pmatrix}
+				0 & 1 & 0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 & 1 & 0 \\
+				0 & 0 & 0 & 0 & -1 & 1 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				2\\
+				-1\\
+				-1
+			\end{pmatrix}
+			\]
+			Dealing with inhomogeneity is annoying though, so a simpler practice would be to solve the homogeneous
+			\[\begin{pmatrix}
+				0 & 1 & 0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 & 1 & 0 \\
+				0 & 0 & 0 & 0 & -1 & 1 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\textbf{0}\]
+			It doesn't take too much imagination here to see that the vectors
+			\[\begin{pmatrix}
+				1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ -1 \\ 0 \\ -1 \\ 1 \\ 1
+			\end{pmatrix}
+			\]
+			are linearly independent and lie in the kernel of this matrix
+			It also doesn't take too much imagination to see that
+			\[\begin{pmatrix}
+				0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 1
+			\end{pmatrix}
+			\]
+			are linearly independent, and that the span of their images under  $\textbf{A}$ is all of $\mathbb{R}^3$. Therefore by rank-nullity theorem the kernel of $A$ is exactly
+			\[\text{span}\left(
+			\begin{pmatrix}
+				1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ -1 \\ 0 \\ -1 \\ 1 \\ 1
+			\end{pmatrix}
+			\right)\]
+			Now that we have solved the homogenous equation, we need a specific solution to 
+			\[\begin{pmatrix}
+				0 & 1 & 0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 & 1 & 0 \\
+				0 & 0 & 0 & 0 & -1 & 1 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				2\\
+				-1\\
+				-1
+			\end{pmatrix}
+			\]
+			in order to get our general solution. We can see from our construction of a basis of $\text{Im}(\textbf{A})$ that
+			\[
+			\begin{pmatrix}
+				0 \\ 2 \\ 0 \\ -1 \\ 0 \\ -1
+			\end{pmatrix}
+			\]
+			is such a solution. Therefore we express the general solution as
+			\[\left\{
+			\begin{pmatrix}
+				0 \\ 2 \\ 0 \\ -1 \\ 0 \\ -1
+			\end{pmatrix} + \textbf{y},
+			\textbf{y}\in
+			\text{span}\left(
+			\begin{pmatrix}
+				1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ -1 \\ 0 \\ -1 \\ 1 \\ 1
+			\end{pmatrix}
+			\right)
+			\right\}
+			\]
+			
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			Note that both of the equations posed are linear, so we can combine them into a single linear system describing our three unknowns. This is a little fiddly so I will do so in several separate steps.\\
+			\\
+			We see that
+			\[\textbf{Ax}=12\textbf{x}\]
+			rearranges to
+			\[(\textbf{A}-12\textbf{I})\textbf{x} = \textbf{0}\]
+			Our second requirement can be restated as
+			\[\begin{pmatrix}
+				1 & 1 & 1
+			\end{pmatrix}
+			\textbf{x} = 1\]
+			We can combine these into a single linear system, giving
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				-6 & 4 & 3 \\
+				6 & -12 & 9 \\
+				0 & 8 & -12 \\
+			\end{pmatrix}
+							\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 0 \\ 0 \\ 0
+			\end{pmatrix}
+			\]
+			We will use Gaussian elimination to solve this. Reducing the first column:
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 10 & 9 \\
+				0 & -18 & 3 \\
+				0 & 8 & -12 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 6 \\ -6 \\ 0
+			\end{pmatrix}
+			\]
+			Swapping rows 2 and 4, then dividing row 2 through by 4:
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 2 & -3 \\
+				0 & -18 & 3 \\
+				0 & 10 & 9 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 0 \\ -6 \\ 6
+			\end{pmatrix}
+			\]
+			Now we reduce column 2:
+						\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 2 & -3 \\
+				0 & 0 & -24 \\
+				0 & 0 & 24 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 0 \\ -6 \\ 6
+			\end{pmatrix}
+			\]
+			And then add the 3rd row to the 4th to remove it altogether:
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 2 & -3 \\
+				0 & 0 & -24 \\
+				0 & 0 & 0 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 0 \\ -6 \\ 0
+			\end{pmatrix}
+			\]
+			Or more succinctly:
+			\[
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 2 & -3 \\
+				0 & 0 & -24 \\
+			\end{pmatrix}
+			\textbf{x}
+			=
+			\begin{pmatrix}
+				1 \\ 0 \\ -6
+			\end{pmatrix}
+			\]
+			The matrix on the left is upper triangular, and so we can clearly see that the determinant is non-zero, meaning that the matrix is invertible. Computing the inverse is not mathematically interesting so I will let the computer do the work, revealing the unique solution to our equation as
+			\[\textbf{x}
+			=
+			\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & 2 & -3 \\
+				0 & 0 & -24 \\
+			\end{pmatrix}^{-1}
+			\begin{pmatrix}
+				1 \\ 0 \\ -6
+			\end{pmatrix}
+			=
+			\frac{1}{8}\cdot
+			\begin{pmatrix}
+				3 \\ 3 \\ 2
+			\end{pmatrix}\]
+		\end{answered}
 	\end{QandA}
 \end{document}
