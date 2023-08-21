@@ -623,5 +623,104 @@
 				3 \\ 3 \\ 2
 			\end{pmatrix}\]
 		\end{answered}
+		
+		\item
+		\begin{answered}
+			a. The rows of this matrix are not independent - the second row is the arithmetic average of the other two. Therefore the matrix is non-invertible.
+			
+			b. This one is not quite so obvious from the outset. We could easily find out whether or not the determinant is zero by plugging it into Wolfram Alpha, but let's do this manually instead. Row operations do not change the row space of the matrix, and we will use this to our advantage.
+			
+			We start by adding multiples of the first row to everything to "zero out" the first column:
+			
+			\[\begin{pmatrix}
+				1 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 \\
+				0 & 1 & -1 & 1 \\
+				0 & 1 & 0 & 0 \\
+			\end{pmatrix}
+			\]
+			
+			Now we do the same for the second row and column:
+			
+			\[\begin{pmatrix}
+				1 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 \\
+				0 & 0 & -2 & 1 \\
+				0 & 0 & -1 & 0 \\
+			\end{pmatrix}
+			\]
+			
+			Now we switch rows 3 and 4:
+			
+			\[\begin{pmatrix}
+				1 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 \\
+				0 & 0 & -1 & 0 \\
+				0 & 0 & -2 & 1 \\
+			\end{pmatrix}
+			\]
+			
+			And now we reduce the third column using the third row:
+			
+			\[\begin{pmatrix}
+				1 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 \\
+				0 & 0 & -1 & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{pmatrix}
+			\]
+			
+			The determinant of this upper triangular matrix is -1, so it is invertible. Since the row space is unchanged, the original matrix was also invertible.
+			
+			At this point I have no qualms about getting Wolfram Alpha to compute the inverse for me, since I know that it exists. Plugging constants into the lengthy formula for a 4x4 inverse is not an instructive or enjoyable exercise.
+			
+			Thus we find the inverse to be 
+			
+			\[\begin{pmatrix}
+				0 & -1 & 0 & 1 \\
+				-1 & 0 & 0 & 1 \\
+				1 & 1 & 0 & -1 \\
+				1 & 1 & 1 & -2 \\
+			\end{pmatrix}\]
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			a. Despite appearances, this is a vector space. Note that $f:\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=f(x^3)$ is a surjection. Therefore we can rewrite
+			\[A = \{(x,x+y,x-y)|x,y\in\mathbb{R}\}\]
+			or more succinctly:
+			\[A = \left\{
+			x\begin{pmatrix}
+				1 \\ 1 \\ 1
+			\end{pmatrix}
+			+			
+			y\begin{pmatrix}
+				0 \\ 1 \\ -1
+			\end{pmatrix}
+			|x,y\in\mathbb{R}
+			\right\}
+			\]
+			which is a 2D plane through the origin and thus clearly a subspace of $\mathbb{R}^3$
+			
+			b. This is not a vector space. $(1,-1,0)\in B$ but $-1*(1,-1,0)=(-1,1,0)\notin B$
+			
+			c. This is a subspace iff $\gamma=0$. If $\gamma\neq0$ then $(0,0,0)\notin C$, and having an additive identity is a requirement of a vector space.
+			
+			If $\gamma=0$ then we can pick $\xi_2$ and $\xi_3$ freely, at which point $\xi_1$ is uniquely determined as $2\xi_2-3\xi_3$. Thus we can write $C$ as
+			\[A = \left\{
+			x\begin{pmatrix}
+				2 \\ 1 \\ 0
+			\end{pmatrix}
+			+			
+			y\begin{pmatrix}
+				-3 \\ 0 \\ 1
+			\end{pmatrix}
+			|x,y\in\mathbb{R}
+			\right\}
+			\]
+			which is a plane through the origin. $C$ is a subspace in this case.
+			
+			d. $D$ is not a subspace since it is not closed under scalar multiplication in $\mathbb{R}$. $(1,1,1)\in D$, but $\frac{1}{2}(1,1,1)=(\frac{1}{2},\frac{1}{2},\frac{1}{2})\notin D$
+		\end{answered}
 	\end{QandA}
 \end{document}
