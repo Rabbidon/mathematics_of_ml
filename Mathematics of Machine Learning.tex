@@ -769,7 +769,105 @@
 		\end{answered}
 		\item
 		\begin{answered}
+			Suppose we want to find the generic form of a point $x\in U_1\cap U_2$. Then we can write
+			\[x = 
+			\begin{pmatrix}
+				1 &  2 & -1 \\
+				1 & -1 &  1 \\
+				-3 &  0 & -1 \\
+				1 & -1 &  1 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3
+			\end{pmatrix}
+			=	
+			\begin{pmatrix}
+				-1 &  2 & -3 \\
+				-2 & -2 &  6 \\
+				2 &  0 & -2 \\
+				1 &  0 & -1 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			\]
+			for some $a_1,a_2,a_3,b_1,b_2,b_3$. We are not however free to pick these 6 values independently however we want - we do actually need the above equality to hold.
 			
+			So we need
+			\[
+			\begin{pmatrix}
+				1 &  2 & -1 \\
+				1 & -1 &  1 \\
+				-3 &  0 & -1 \\
+				1 & -1 &  1 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3
+			\end{pmatrix}
+			=	
+			\begin{pmatrix}
+				-1 &  2 & -3 \\
+				-2 & -2 &  6 \\
+				2 &  0 & -2 \\
+				1 &  0 & -1 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			\]
+			which we can rewrite as
+			\[
+			\begin{pmatrix}
+				1 &  2 & -1 & -1 &  2 & -3  \\
+				1 & -1 &  1  & -2 & -2 &  6\\
+				-3 &  0 & -1 & 2 &  0 & -2 \\
+				1 & -1 &  1  & 1 &  0 & -1\\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3 \\ b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			= 0
+			\]
+			We can now solve this by Gaussian elimination. We reduce column 1 with multiples of the first row:
+			\[
+			\begin{pmatrix}
+				1 &  2 & -1 & -1 &  2 & -3  \\
+				0 & -3 &  2  & -1 & -4 &  9\\
+				0 &  6 & -4 & -1 &  6 & -11 \\
+				0 & -3 &  2  & 2 &  -2 & 2\\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3 \\ b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			= 0
+			\]
+			and now we reduce column 2 with multiples of the second row:
+			\[
+			\begin{pmatrix}
+				1 &  2 & -1 & -1 &  2 & -3  \\
+				0 & -3 & 2 & -1 & -4 &  9\\
+				0 &  0 & 0 & -3 &  2 & -7 \\
+				0 &  0 & 0 & 3 &  2 & -7\\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3 \\ b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			= 0
+			\]
+			and now we reduce column 4 with multiples of the third row:
+			\[
+			\begin{pmatrix}
+				1 &  2 & -1 & -1 &  2 & -3  \\
+				0 & -3 & 2 & -1 & -4 &  9\\
+				0 &  0 & 0 & -3 &  2 & -7 \\
+				0 &  0 & 0 & 0 &  4 & -14\\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3 \\ b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			= 0
+			\]
+			We now work out the complete 
 		\end{answered}
 	\end{QandA}
 \end{document}
