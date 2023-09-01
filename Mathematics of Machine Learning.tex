@@ -845,8 +845,8 @@
 			\[
 			\begin{pmatrix}
 				1 &  2 & -1 & -1 &  2 & -3  \\
-				0 & -3 & 2 & -1 & -4 &  9\\
-				0 &  0 & 0 & -3 &  2 & -7 \\
+				0 & -3 &  2  & -1 & -4 &  9\\
+				0 &  0 & 0 & -3 &  -2 & 7 \\
 				0 &  0 & 0 & 3 &  2 & -7\\
 			\end{pmatrix}
 			\begin{pmatrix}
@@ -858,16 +858,52 @@
 			\[
 			\begin{pmatrix}
 				1 &  2 & -1 & -1 &  2 & -3  \\
-				0 & -3 & 2 & -1 & -4 &  9\\
-				0 &  0 & 0 & -3 &  2 & -7 \\
-				0 &  0 & 0 & 0 &  4 & -14\\
+				0 & -3 &  2  & -1 & -4 &  9\\
+				0 &  0 & 0 & -3 &  -2 & 7 \\
+				0 &  0 & 0 & 0 &  0 & 0\\
 			\end{pmatrix}
 			\begin{pmatrix}
 				a_1 \\ a_2 \\ a_3 \\ b_1 \\ b_2 \\ b_3
 			\end{pmatrix}
 			= 0
 			\]
-			We now work out the complete 
+			We can now work out the full set of solutions from this echelon row form.
+			There is a general methodology here that I will lay out rigorously at the end of this chapter, but for now I will just execute this methodology.
+			
+			Actually, in this case we don't even have to solve this entire set of linear equations. As soon as we solve for $b_1,b_2,b_3$ we have our completely general expression for $x$.
+			
+			We start from the last non-zero row of the matrix and resolve each row in turn:
+			\begin{itemize}
+				\item We have $-3b_1-2b_2+7b_3=0$, which allows us to pick $b_1,b_2$ freely, and then this forces $b_3=\frac{3b_1+2b_2}{7}$
+			\end{itemize}
+			
+			We can now stop since we have determined all possible value combinations for $b_1,b_2,b_3$, and so we have the general form for $x$ as
+			\[
+			\begin{pmatrix}
+				-1 &  2 & -3 \\
+				-2 & -2 &  6 \\
+				2 &  0 & -2 \\
+				1 &  0 & -1 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				b_1 \\ b_2 \\ \frac{3b_1+2b_2}{7}
+			\end{pmatrix}
+			=
+			\frac{1}{7}
+			\begin{pmatrix}
+				-16b_1+8b_2 \\ 4b_1-2b_2 \\ 8b_1-4b_2 \\ 4b_1-2b_2
+			\end{pmatrix}
+			=(2b_1-b_2)
+			\begin{pmatrix}
+				-8 \\ 2 \\ 4 \\ 2
+			\end{pmatrix}
+			\]
+			We can select $b_1,b_2$ to force $2b_1-b_2$ to take any value we like. Therefore the singleton set containing the vector
+			\[\begin{pmatrix}
+				-8 \\ 2 \\ 4 \\ 2
+			\end{pmatrix}
+			\]
+			is a basis for $U_1\cap U_2$.
 		\end{answered}
 	\end{QandA}
 \end{document}
