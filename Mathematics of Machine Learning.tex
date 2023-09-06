@@ -970,7 +970,328 @@
 		
 		\item 
 		\begin{answered}
-			We can see that 
+			a. In order to see whether a set is a subspace of a space, we need to check closure under addition and scalar multiplication - all the other requirements for being a vector space are inherited from the parent space.
+			
+			For $F$ we can check these two properties directly:
+			\begin{itemize}
+				\item Closure under addition - suppose that we have
+				\[(x_1,y_1,z_1),(x_2,y_2,z_2)\in F\]
+				Then we also have
+				\[(x_1+x_2,y_1+y_2,z_1+z_2)\in F\]
+				since
+				\[(x_1+x_2) + (y_1+y_2) - (z_1+z_2) = (x_1+y_1-z_1) + (x_2+y_2-z_2) = 0 + 0 = 0\]
+				\item Closure under scalar multiplication - suppose that we have
+				\[(x,y,z)\in F\]
+				Then for any $\lambda\in\mathbb{R}$ we have
+				\[(\lambda x,\lambda y,\lambda z)\in F\]
+				since 
+				\[(\lambda x+\lambda y-\lambda z) = \lambda(x+y-z) = \lambda\cdot0 = 0\]
+			\end{itemize}
+			
+			With $G$ it is a lot easier to see from the construction that it is a 2-dimensional subspace and work out a fairly obvious basis, but we'll handle it in the same way we did $F$ for the sake of practice.
+			\begin{itemize}
+				\item Closure under addition - suppose that we have (completely generally)
+				\[(a_1-b_1,a_1+b_1,a_1-3b_1),(a_2-b_2,a_2+b_2,a_2-3b_2)\in G\]
+				then the sum of these two elements, which we call $v$, is also in $G$.
+				We can see this since if we set $A=a_1+a_2$ and $B=b_1+b_2$, then we have
+				\[v = (A-B,A+B,A-3B)\] and so $v\in G$.
+				\item Closure under scalar multiplication - suppose that we have
+				\[(a-b,a+b,a-3b)\in G\] and some $\lambda\in\mathbb{R}$. Set $A=\lambda a,B=\lambda b$ and we see that
+				\[(\lambda(a-b),\lambda(a+b),\lambda(a-3b)) = (A-B,A+B,A-3B)\in G\]
+			\end{itemize}
+			Therefore both $F$ and $G$ are subspaces of $\mathbb{R}^3$.
+			
+			b. Pick a completely general element of $G$, namely $(a-b,a+b,a-3b)$ for some $a,b\in\mathbb{R}$. This element also lies in $F$, and therefore in $F\cap G$, exactly when $a-b+a+b-a+3b=0$, or rather $a=-3b$. Therefore the general element of $F\cap G$ can be written as $\{(-4b,-2b,-6b)|b\in\mathbb{R}\}$.
+			
+			c. Really? Ok then ...
+			
+			We can see that $F$ is a 2D space. It contains the mutually linearly independent vectors $(1,0,1)$ and $(1,1,2)$, and doesn't include all of $\mathbb{R}^3$. Therefore $\{(1,0,1),(1,1,2)\}$ is in fact a basis of $F$.
+			
+			The way that $G$ is defined makes it very clear that $\{(1,1,1),(-1,1,-3)\}$ is a basis of $G$. 
+			
+			Now that we have a basis for $F$ and $G$ we can say that the general element $v$ of $F\cap G$ satisfies
+			\[v
+			= a
+			\begin{pmatrix}
+				1 \\
+				0 \\
+				1 \\
+			\end{pmatrix}
+			+ b
+			\begin{pmatrix}
+				1 \\
+				1 \\
+				2 \\
+			\end{pmatrix}
+			=
+			c
+			\begin{pmatrix}
+				1 \\
+				1 \\
+				1 \\
+			\end{pmatrix}
+			+ d
+			\begin{pmatrix}
+				-1 \\
+				1 \\
+				-3 \\
+			\end{pmatrix}
+			\]
+			We want to find all possible values for $a,b,c,d$. To do this we rewrite the above equation as
+			\[
+			\begin{pmatrix}
+				1 & 1 & -1 & 1 \\
+				0 & 1 & -1 & -1 \\
+				1 & 2 & -1 & 3 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a \\ b \\ c \\ d 
+			\end{pmatrix}
+			= 0
+			\]
+			Now we use row operations to put this into echelon row form. We reduce the first column:
+			\[
+			\begin{pmatrix}
+				1 & 1 & -1 & 1 \\
+				0 & 1 & -1 & -1 \\
+				0 & 1 & 0 & 2 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a \\ b \\ c \\ d 
+			\end{pmatrix}
+			= 0
+			\]
+			Then the second:
+			\[
+			\begin{pmatrix}
+				1 & 1 & -1 & 1 \\
+				0 & 1 & -1 & -1 \\
+				0 & 0 & 1 & 3 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				a \\ b \\ c \\ d 
+			\end{pmatrix}
+			= 0
+			\]
+			From this we see that we have completely free choice over the value of $d$, at which point $a,b,c$ are completely determined. In particular we see that $c = -3d$, and so our general form for $v$ is
+			\[v=
+			c
+			\begin{pmatrix}
+				1 \\
+				1 \\
+				1 \\
+			\end{pmatrix}
+			+ d
+			\begin{pmatrix}
+				-1 \\
+				1 \\
+				-3 \\
+			\end{pmatrix}
+			=
+			-3d
+			\begin{pmatrix}
+				1 \\
+				1 \\
+				1 \\
+			\end{pmatrix}
+			+ d
+			\begin{pmatrix}
+				-1 \\
+				1 \\
+				-3 \\
+			\end{pmatrix}
+			= d
+			\begin{pmatrix}
+				-4 \\
+				-2 \\
+				-6 \\
+			\end{pmatrix}\]
+			which is exactly the answer we got in part b.
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			a. Yes - integration distributes over addition and commutes with scalar multiplication
+			
+			b. Yes - differentiation distributes over addition and commutes with scalar multiplication
+			
+			c. No - $\cos(0)\neq 0$ so $\forall x, \cos(x+0)\neq \cos(x)+\cos(0)$
+			
+			d. Yes - matrix multiplication distributes over addition and commutes with scalar multiplication
+			
+			e. No - $\Phi(x)\neq 0$ (where in this case 0 is notation abuse meaning the 2x2 zero matrix) so we have the same problem as in part c.
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			a. The transformation matrix is 
+			\[
+			\begin{pmatrix}
+				3 & 2 & 1 \\
+				1 & 1 & 1 \\
+				1 & -3 & 0 \\
+				2 & 3 & 1
+			\end{pmatrix}
+			\]
+			b. The columns of this matrix form a linearly independent set, so the rank of the transformation is 3.
+			
+			c.We already know that
+			\[\left\{\begin{pmatrix}
+				3 \\
+				1 \\
+				1 \\
+				2
+			\end{pmatrix},
+			\begin{pmatrix}
+				2 \\
+				1 \\
+				-3 \\
+				3
+			\end{pmatrix}
+			,
+			\begin{pmatrix}
+				1 \\
+				1 \\
+				0 \\
+				1
+			\end{pmatrix}\right\}\]
+			is a basis for our image, which has dimension 3. By rank-nullity we see that the dimension of the kernel must be 0, and therefore is the trivial subspace.
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			$f$ and $g$ are both automorphisms so they both have trivial kernel and full image, as do $f\circ g$ and $g\circ f$. Therefore all the claimed statements are vacuously true.
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			a. This square matrix has determinant $-2\neq0$, and therefore has full rank and trivial kernel.
+			
+			b. Here I am going to go out of my way and explain the whole "basis change" thing in detail in order achieve a clear understanding.
+			
+			In essence a matrix represents a linear map between two vector spaces. But it's a little more strict than that - a matrix defines a linear map between two vector spaces using a basis of each space. By specifying where each of the basis vectors of the domain space go in terms of our image basis, we define our transformation matrix.
+			
+			Let's be more specific to this case - we have the same basis for both our domain and image, which we can write as $\{v_1,v_2,v_3\}$. Pick an arbitrary vector in our domain $x = a_1v_1+a_2v_2+a_3v_3$. Then we find unique $b_1,b_2.b_3$ s.t.
+			\[A_\Phi x = A_\Phi(a_1v_1+a_2v_2+a_3v_3) = b_1v_1+b_2v_2+b_3v_3\]
+			Now, let $B$ denote the invertible square matrix with $v_1,v_2,v_3$ as its columns. We can use this to immediately rewrite the above equation as
+			\[A_\Phi B
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3
+			\end{pmatrix}
+			=
+			B
+			\begin{pmatrix}
+				b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			\]
+			$B$ is invertible so we can pre-multiply by $B^{-1}$ to get
+			\[B^{-1}A_\Phi B
+			\begin{pmatrix}
+				a_1 \\ a_2 \\ a_3
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+				b_1 \\ b_2 \\ b_3
+			\end{pmatrix}
+			\]
+			The above construction is completely general, and thus we have found our target matrix $\bar{A}_\Phi = B^{-1}A_\Phi B$, since it defines where every vector in the domain, expressed in terms of our chosen basis, is mapped to i  the image, also expressed in terms of our chosen basis.
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			a. Each pair of vectors is clearly linearly independent and thus span $\mathbb{R}^2$. I'm not going to draw them because I can't be bothered with TeX diagrams.
+			
+			b. I could just write the answer here, but this is again an opportunity for detail and clarity. Suppose we have two bases $B$ and $B'$ of a space $A$, and we pick an arbitrary point $v\in A$. Then let $x_1,...,x_n$ be the coefficients of $v$ in $B$ and $y_1,...,y_n$ be the coefficients of $v$ in $B'$. Then if we define some $M_i$ as the square matrices with their columns as the basis vectors of $B_i$, we can see that
+			\[
+			M_1
+			\begin{pmatrix}
+				x_1 \\ ... \\ x_n
+			\end{pmatrix}
+			=
+			M_2
+			\begin{pmatrix}
+				y_1 \\ ... \\ y_n
+			\end{pmatrix}
+			\]
+			and therefore
+			\[
+			\begin{pmatrix}
+				x_1 \\ ... \\ x_n
+			\end{pmatrix}
+			=
+			M_1^{-1}
+			M_2
+			\begin{pmatrix}
+				y_1 \\ ... \\ y_n
+			\end{pmatrix}
+			\]
+			Our $v$ was arbitrary so this holds completely generally, and thus our "basis change" matrix from $B'$ to $B$ is $M_1^{-1}M_2$.
+			
+			In our specific case we have
+			\[M_1 = 
+			\begin{pmatrix}
+				2 & -1 \\
+				1 & -1
+			\end{pmatrix},
+			M_2 = 
+			\begin{pmatrix}
+				2 & 1 \\
+				-2 & 1
+			\end{pmatrix}
+			\]
+			and so we compute our basis change matrix as 
+			\[M_1^{-1}M_2=
+			\begin{pmatrix}
+				4 & 0 \\
+				6 & -1
+			\end{pmatrix}
+			\]
+			
+			c. i. I'm not doing this yet again. It's a pretty easy computation.
+			
+			c. ii. Here we get payoff from working out the completely general result int part b. Our specific values for $M_1$ and $M_2$ in this case  are
+			\[M_1 = I, M_2 = 
+			\begin{pmatrix}
+				1 & 0 & 1 \\
+				2 & -1 & 0\\
+				-1 & 2 & -1				
+			\end{pmatrix}\]
+			and so our basis change matrix is just $M_2$. (In fact the basis change matrix from any arbitrary basis to the standard basis is just the matrix with the vectors of the original basis making up the columns)
+			
+			d. To work out $A_\Phi$ w.r.t $B$ and $C$, we should work out where $\Phi$ actually sends all the basis vectors of $B$. Since $\Phi$ is linear we see that
+			\[\Phi(b_1)=\frac{1}{2}(\Phi(b_1+b_2)+\Phi(b_1-b_2)) = c_1+2c_3\]
+			and
+			\[\Phi(b_2)=\frac{1}{2}(\Phi(b_1+b_2)-\Phi(b_1-b_2)) = -c_1+c_2-c_3\]
+			Therefore the transformation matrix $A_\Phi$ w.r.t $B$ as our domain basis and $C$ as our image basis is
+			\[\begin{pmatrix}
+				1 & -1 \\
+				0 & 1 \\
+				2 & -1
+			\end{pmatrix}\]
+			
+			e. We can think of the linear map in the required bases as the composition of several transforms that we have already computed. First convert our domain representation from basis $B'$ to basis $B$, then apply the transform $\Phi$, and then convert our image representation from basis $C$ to basis $C'$. We have already computed all three of these matrices and so we can just compose them in order to get the required transformation matrix as
+			\[
+			\begin{pmatrix}
+				1 & 0 & 1 \\
+				2 & -1 & 0\\
+				-1 & 2 & -1				
+			\end{pmatrix}
+			\begin{pmatrix}
+				1 & -1 \\
+				0 & 1 \\
+				2 & -1
+			\end{pmatrix}
+			\begin{pmatrix}
+				4 & 0 \\
+				6 & -1
+			\end{pmatrix} = 
+			\begin{pmatrix}
+			0 & 2 \\
+			-10 & 3 \\
+			12 & -4
+			\end{pmatrix}\]
+			
+			f. I'm not going through this rigmarole. The first three parts just involve applying the three constituent transformations in turn. The fourth is just applying the combined transform all at once.
 		\end{answered}
 	\end{QandA}
 \end{document}
