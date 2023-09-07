@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.5)  6 SEP 2023 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.5)  7 SEP 2023 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -197,7 +197,7 @@ rt-ible square ma-trix with $\OML/cmm/m/it/10 v[]; v[]; v[]$ \OT1/cmr/m/n/10 as
  its columns.
  []
 
-[17] [18] [19] (Mathematics of Machine Learning.aux)
+[17] [18] [19] [20] (Mathematics of Machine Learning.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
@@ -226,10 +226,10 @@ b><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><C:/Users/edwin/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on "Mathematics of Machine Learning.pdf" (19 pages, 187132 bytes
+Output written on "Mathematics of Machine Learning.pdf" (20 pages, 192563 bytes
 ).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
