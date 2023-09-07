@@ -1303,6 +1303,30 @@
 		
 		\item In maths we don't just care about things - we care about maps between things. We can define a linear map as something that "respects linearity" - i.e. we map from one vector space to another, both over the same field, with a map that distributes over addition and commutes with scalar multiplication.
 		
-		\item Suppose we have 
+		\item Suppose we have a linear map $\Phi$ from space $A$ of dimension $m$ to space $B$ of dimension $n$. Then if we pick any basis of space A, then the action of $\Phi$ on these $m$ basis vectors uniquely defines $\Phi$. Each of these is mapped to a unique linear combination of the image basis. Therefore with respect to a domain and image basis, we can completely define a linear transformation with just $m*n$ variables. This is how we arrive at the concept of a matrix.
+		
+		\item Note that a matrix is the realisation of an abstract linear map into a specific choice of domain and image basis. However, when it comes to commonly used vector spaces like $\mathbb{R}^n$, there is a canonical basis we often use.
+		
+		\item Matrix addition doesn't really have a useful geometric interpretation, but matrix multiplication does. We can multiply matrices together to "pre-jack" our calculations and reduce the amount of work we have to do.
+		
+		\item We can also use matrices to solve systems or linear equations, but possibly a better way to look at this is "what things can we put into this transformation to get the output we want". We will see how this becomes useful later - ML is all about tailoring a system to get specific outputs under certain circumstances.
+		
+		\item I like to describe the general solution to a matrix equation (or linear system, if you prefer) as a specific non-homogeneous solution plus the general solution to the homogenous problem.
+		
+		\item In general the best way to do this is via row reductions. We are allowed to switch rows, multiply through by non-zero constants, and add any multiple of a row to a distinct row. Note that all of these operations are completely reversible. This guarantees that the solution set is unaffected.
+		
+		\item It is fairly easy to see how we can use the above to achieve echelon row form. We work down the rows of the matrix, and across the columns. For each column if all remaining rows have 0 element skip to the next column. Else switch rows to get a row with non-zero element. Scale so that element is 1. Add multiples of this row to all rows below it s.t. the column element becomes 0. Move onto the next column and the next row. Stop when we run off the right or bottom of the matrix.
+		
+		\item If we are attempting to achieve a specific inhomogeneous solution then we need to "update" our target vector each time we perform an operation. If we are trying for a general homogeneous solution then we don't.
+		
+		\item After we do all this it is relatively easy to obtain a solution. Start with the bottom row. We have free choice for each "newly chosen" variable apart from the last one, which is determined by our choice of all previous variables. We write dependent variables in terms of our independent ones. This will give us the general solution for the homogeneous equation, and will give a solution for the inhomogeneous one assuming that there isn't a row of all zeros in the matrix and a non-zero in the target vector.
+		
+		\item We can make this even easier with reduced row echelon form - where all pivots are 1 and all elements in the pivot column other than the pivot are 0. We start from the bottom row and work up here - note that this is pretty much analogous to a big chunk of the solving process described above. It seems like the programmatic way they solve this is called the "minus 1 trick".
+		
+		\item Previously we used row reduction to solve a system of linear equations, but it can also be used to determine a matrix inverse from $AA^{-1}=I$. As we do row operations on A to convert it into reduced echelon row form, the final result will be the identity matrix, and the matrix on the right will be warped into the actual numerical $A^{-1}$.
+		
+		\item In reality there are better practical ways to solve linear systems and Gaussian elimination isn't used.
+		
+		\item This chapter has some other information but I don't really care. The above are the important things I didn't know all that well, expressed in a good way.
 	\end{itemize}
 \end{document}
