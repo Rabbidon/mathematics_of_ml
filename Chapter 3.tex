@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\chapternumber}{3}
+\title{Mathematics for Machine Learning - Chapter \chapternumber\space Solutions}
+\author{Edwin Fennell}
+\date{}
+\newenvironment{QandA}{\begin{enumerate}[label=\chapternumber.\arabic*]\bfseries\boldmath}
+	{\end{enumerate}}
+\newenvironment{answered}{\par\bigskip\normalfont\unboldmath}{}
+\usepackage{lipsum}
+\pagestyle{empty}
+\begin{document}
+	\maketitle
+	
+	Note - I'm not going to write out the questions here since they are very, very inefficiently posed and no way am I going to TeX all of that.
+	
+		
+	\noindent%
+	\begin{QandA}
+		\item 
+		\begin{answered}
+			We can more straightforwardly represent $\langle x,y\rangle$ as 
+			\[x^T
+			\begin{pmatrix}
+				1 & -1 \\
+				-1 & 2
+			\end{pmatrix}
+			y\]
+			\begin{itemize}
+				\item Bilinearity - we note that tensor multiplication commutes with scalar multiplication and distributes over tensor addition. Therefore our function is linear over both $x$ and $y$.
+				\item Symmetry - the output of our function $\langle .,.\rangle$ is a scalar and thus is equal to its own transpose, so $\forall x,y$ we have
+				\[
+				\langle x,y\rangle
+				=
+				x^T
+				\begin{pmatrix}
+					1 & -1 \\
+					-1 & 2
+				\end{pmatrix}
+				y
+				=
+				\left(
+				x^T
+				\begin{pmatrix}
+					1 & -1 \\
+					-1 & 2
+				\end{pmatrix}
+				y
+				\right)^T
+				\]
+				\[
+				=
+				y^T
+				\begin{pmatrix}
+					1 & -1 \\
+					-1 & 2
+				\end{pmatrix}^T
+				x
+				=
+								y^T
+				\begin{pmatrix}
+					1 & -1 \\
+					-1 & 2
+				\end{pmatrix}
+				x
+				=
+				\langle y,x\rangle
+				\]
+				\item Positive definite - for some reason this chapter doesn't cover diagonalisation so I guess we'll do this manually. 
+				
+				Consider an arbitrary $v = (v_1,v_2)^T\in\mathbb{R}$. Then
+				\[\langle v,v \rangle = 
+				v_1^2-2v_1v_2+2v_2^2 = (v_1-v_2)^2 + v_2^2\geq0								
+				\]
+				with equality iff $v_1=v_2=0$.
+			\end{itemize}
+		\end{answered}
+	\end{QandA}
+\end{document}
