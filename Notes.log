@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.10.5)  19 SEP 2023 10:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.10.5)  19 SEP 2023 09:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"./Chapter 3.tex"
-(Chapter 3.tex
+**./Notes.tex
+(Notes.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-08-30>
 (C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls
@@ -131,85 +131,71 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip55
 \dth@everypar=\toks30
 )
-(C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lipsum\lipsum.sty
-(C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3keys2e
-\l3keys2e.sty
-(C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty
-Package: expl3 2022-08-30 L3 programming layer (loader) 
-
 (C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend
 -pdftex.def
 File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count273
 \l__pdf_internal_box=\box54
-))
-Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
-)
-Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count274
-\l__lipsum_a_int=\count275
-\l__lipsum_b_int=\count276
+) (Notes.aux)
+\openout1 = `Notes.aux'.
 
-(C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lipsum\lipsum.ltd.t
-ex)) (Chapter 3.aux)
-\openout1 = `"Chapter 3.aux"'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
 
 
 (C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 
 
 (C:\Users\Edwin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+LaTeX Warning: No \author given.
+
 [1
 
 {C:/Users/Edwin/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}]
-[2] (Chapter 3.aux) ) 
+[2] (Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2635 strings out of 475355
- 44505 string characters out of 2773482
- 474169 words of memory out of 3000000
- 24028 multiletter control sequences out of 15000+600000
- 478994 words of font info for 65 fonts, out of 8000000 for 9000
+ 2171 strings out of 475355
+ 33127 string characters out of 2773482
+ 376534 words of memory out of 3000000
+ 23584 multiletter control sequences out of 15000+600000
+ 477164 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,77p,234b,399s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Edwin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/
-jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Edwin/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Edwin/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users
-/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.p
-fb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Edwin/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Edwin/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Edwin/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
-Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb>
-Output written on "Chapter 3.pdf" (2 pages, 122604 bytes).
+ 54i,6n,62p,507b,220s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Edwin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\tcrm1000.pk><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Edwin/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Edwin/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Edwi
+n/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr17.pfb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Users/Edwin/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Edwin/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Edwin/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Notes.pdf (2 pages, 109048 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -80,5 +80,103 @@
 				with equality iff $v_1=v_2=0$.
 			\end{itemize}
 		\end{answered}
+		
+		\item 
+		\begin{answered}
+			This is not an inner product since the matrix corresponding to this bilinear form is not symmetric. We observe that
+			\[
+			\langle
+			\begin{pmatrix}
+				0 \\ 1
+			\end{pmatrix},
+			\begin{pmatrix}
+				1 \\ 0
+			\end{pmatrix}
+			\rangle = 1
+			\]
+			but also that
+			\[
+			\langle
+			\begin{pmatrix}
+				1 \\ 0
+			\end{pmatrix},
+			\begin{pmatrix}
+				0 \\ 1
+			\end{pmatrix}
+			\rangle = 0
+			\]
+			This bilinear form is not symmetric and therefore is not an inner product
+		\end{answered}
+		
+		\item 
+		\begin{answered}
+			Before we start we should note that
+			\[x-y = 
+			\begin{pmatrix}
+				2 \\ 3 \\ 3
+			\end{pmatrix}
+			\]
+			a. w.r.t. this inner product we have
+			\[
+			\langle x-y, x-y\rangle
+			=
+			\begin{pmatrix}
+				2 & 3 & 3
+			\end{pmatrix}
+			\begin{pmatrix}
+				2 \\ 3 \\ 3
+			\end{pmatrix}
+			=
+			22
+			\]
+			and so
+			\[||x-y||=\sqrt{22}\]
+			b. w.r.t. this inner product we have
+			\[
+			\langle x-y, x-y\rangle
+			=
+			\begin{pmatrix}
+				2 & 3 & 3
+			\end{pmatrix}
+			\begin{pmatrix}
+				2 & 1 & 0 \\
+				1 & 3 & -1 \\
+				0 & -1 & 2 \\
+			\end{pmatrix}
+			\begin{pmatrix}
+				2 \\ 3 \\ 3
+			\end{pmatrix}
+			=
+			47
+			\]
+			and so
+			\[||x-y||=\sqrt{47}\]
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			We define the "angle" $\theta$ w.r.t an inner product $\langle .,. \rangle$ (and its induced norm $||.||$) between two vectors $x,y$ as
+			\[\theta = cos^{-1}\left(\frac{\langle x,y \rangle}{||x||,||y||}\right)\]
+			where we define $cos^{-1}$ to take values in $[0,\pi]$
+			
+			a. 
+			\[\langle x,y \rangle = x^Ty = -3\]
+			\[||x|| = \sqrt{x^Tx} = \sqrt{5}\]
+			\[||y|| = \sqrt{y^Ty} = \sqrt{2}\]
+			and therefore we have
+			\[\theta = cos^{-1}\left(\frac{\langle x,y \rangle}{||x||,||y||}\right) = cos^{-1}\left(\frac{-3}{\sqrt{10}}\right)\approx 161.6^\circ\]
+			b.
+			\[\langle x,y \rangle = x^TAy = -11\]
+			\[||x|| = \sqrt{x^TAx} = \sqrt{18}\]
+			\[||y|| = \sqrt{y^TAy} = \sqrt{7}\]
+			and therefore we have
+			\[\theta = cos^{-1}\left(\frac{\langle x,y \rangle}{||x||,||y||}\right) = cos^{-1}\left(\frac{-11}{\sqrt{126}}\right)\approx 168.5^\circ\]
+		\end{answered}
+		
+		\item
+		\begin{answered}
+			What actually is the orthogonal projection? Note that 
+		\end{answered}
 	\end{QandA}
+
 \end{document}
